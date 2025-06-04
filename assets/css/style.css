@@ -112,7 +112,6 @@ button {
   background: none;
   border: none;
   font: inherit;
-
 }
 
 input { width: 100%; }
@@ -235,8 +234,8 @@ body.active { overflow: hidden; }
 
 .has-bg-image {
   background-repeat: no-repeat;
-  background-position: center;
   background-position: 20%;
+  background-size: cover;
 }
 
 .w-100{ width: 100%; }
@@ -279,7 +278,7 @@ body.active { overflow: hidden; }
   padding: 26px 30px;
 }
  
-.header-action-btn { font-size: 20px; }
+.header-action-btn { font-size: 28px; }
 
 .header-action-btn ion-icon{ --ionicon-stroke-width: 40px; }
 
@@ -291,7 +290,6 @@ body.active { overflow: hidden; }
   top: 0;
   left: -300px;
   max-width: 300px;
-  width: 100%;
   background-color: var(--phthalo-green-2);
   height: 100vh;
   padding: 30px 15px;
@@ -360,7 +358,7 @@ body.active { overflow: hidden; }
 .hero {
   position: relative;
   background-color: var(--phthalo-green-2);
-  color: var(white);
+  color: var(--white);
   text-align: center;
   padding-block: 200px 250px;
   z-index: 1;
@@ -370,14 +368,13 @@ body.active { overflow: hidden; }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../images/hero-bg.jpg);
+  background-image: url('../images/hero-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   mix-blend-mode: luminosity;
   opacity: 0.15;
   z-index: -1;
-
 }
 
 .hero-subtitle {
@@ -395,13 +392,15 @@ body.active { overflow: hidden; }
   gap: 10px;
 }
 
-.hero .abs-img{
+.hero .abs-img {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 40%);
   animation: flyMove 1.25s ease-in-out infinite alternate;
 }
+
+/* width - 1474*/
 
 @keyframes flyMove {
   0% { transform: translate(-50%, 40%) }
@@ -790,7 +789,27 @@ body.active { overflow: hidden; }
 /*-----------------------------------*\
   #BACK TO TOP
 \*-----------------------------------*/
+.back-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background-color: var(--satin-sheen-gold);
+  color: var(--white);
+  font-size: 20px;
+  padding: 15px;
+  border-radius: var(--radius-circle);
+  box-shadow: var(--shadow);
+  transition: var(--transition-1);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 3;
+}
 
+.back-top-btn.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px);
+}
 
 
 
